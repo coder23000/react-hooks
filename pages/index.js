@@ -1,7 +1,16 @@
-import react from "react";
+import react, {useState} from "react";
 
 const inputElement = () => {
-    return <input placeholder="Enter some text" />
+
+    const [inputText, setInputText] = useState("");
+
+    return <div>
+        <input onChange={(e) => {
+        setInputText(e.target.value);
+    }} 
+    placeholder="Enter some text" /><br/>
+    {inputText}
+    </div>
 };
 
 export default inputElement;
